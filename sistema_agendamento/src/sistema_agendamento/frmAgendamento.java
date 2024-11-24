@@ -488,8 +488,7 @@ public class frmAgendamento extends javax.swing.JFrame {
         try{
             PacienteDAO objPacienteDAO = new PacienteDAO();
             rs = objPacienteDAO.SelecionarPaciente(cpf);
-            rs.next();
-            if(rs != null){
+            if(rs != null && rs.next()){
                 txtCpf.setText(maskCpf(rs.getString(1)));
                 txtNome.setText(rs.getString(2));
                 txtEnd.setText(rs.getString(3));
